@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="raytracer"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\..\opt\intel\;CMake Files\..\..\..\..\..\..\opt\intel\openvino_2021\;CMake Files\..\..\..\..\..\..\opt\intel\openvino_2021\opencv\;CMake Files\..\..\..\..\..\..\opt\intel\openvino_2021\opencv\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="raytracer">
+				<Option output="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/raytracer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/opt/intel/openvino_2021.4.752/opencv/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 raytracer"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="raytracer/fast">
+				<Option output="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/raytracer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/opt/intel/openvino_2021.4.752/opencv/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 raytracer/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Box.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Box.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Color.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Color.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Image.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Image.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/KDTree.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/KDTree.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Plane.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Plane.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Scene.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Scene.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Triangle.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Triangle.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Vec.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Vec.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/base.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/main.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/../../../../../../opt/intel/openvino_2021/opencv/cmake/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\intel\openvino_2021\opencv\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/../../../../../../opt/intel/openvino_2021/opencv/cmake/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\intel\openvino_2021\opencv\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/../../../../../../opt/intel/openvino_2021/opencv/cmake/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\intel\openvino_2021\opencv\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/../../../../../../opt/intel/openvino_2021/opencv/cmake/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\intel\openvino_2021\opencv\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
