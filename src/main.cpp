@@ -12,13 +12,17 @@
 #include "Image.h"
 #include "Plane.h"
 #include "Triangle.h"
+#include "ObjParser.h"
 #include "Box.h"
 #include "Sphere.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
+    ObjParser obj_parser = ObjParser("data/ladybug_black.obj");
     vector<Primitive *> objects;
+
+
     Material mat;
     mat.diffuse_f_ = Color(1, 1, 1);
     mat.reflection_f = Color(1, 1, 1);
@@ -31,33 +35,35 @@ int main(int argc, char **argv) {
     mat.reflection_k = 0.3;
     mat.specular_k_ = 1.0;
     mat.shininess_ = 50;
-    auto *plane = new Plane(Vec(0, 0, 0), Vec(0, 0, 1));
-    (*plane).setMaterial(mat);
-    objects.push_back(plane);
+    obj_parser.parseObjects(objects, mat);
 
-    auto *sphere = new Sphere(Vec(1.5, 8, 1), 1);
-    (*sphere).setMaterial(mat);
-    objects.push_back(sphere);
+//    auto *plane = new Plane(Vec(0, 0, 0), Vec(0, 0, 1));
+//    (*plane).setMaterial(mat);
+//    objects.push_back(plane);
 
-    auto *box = new Box(Vec(0, 10, 0), Vec(3, 13, 3));
-    (*box).setMaterial(mat);
-    objects.push_back(box);
+//    auto *sphere = new Sphere(Vec(1.5, 8, 1), 1);
+//    (*sphere).setMaterial(mat);
+//    objects.push_back(sphere);
+
+//    auto *box = new Box(Vec(0, 10, 0), Vec(3, 13, 3));
+//    (*box).setMaterial(mat);
+//    objects.push_back(box);
 
     Scene scene;
     KDTree *kdtree_root = KDTree::construct_kdtree(objects);
     scene.kd_tree = kdtree_root;
 
-    float plane_height = 12;
-    float plane_width = 18;
+    float plane_height = 240;
+    float plane_width = 300;
 
     scene.camera = new Camera();
-    scene.camera->origin_c = Vec(-2, 0, 8);
-    scene.camera->view_plane_point_c = Vec(0, 16, 0);
+    scene.camera->origin_c = Vec(-10, -20, 8);
+    scene.camera->view_plane_point_c = Vec(-5, 10, 0);
     scene.camera->view_plane_height = plane_height;
     scene.camera->view_plane_width = plane_width;
 
-    scene.setOcclusionQ(20);
-    scene.setSoftlightQ(6);
+    scene.setOcclusionQ(1);
+    scene.setSoftlightQ(1);
 
     scene.lights.push_back(new Light());
     scene.lights[0]->origin_c_ = Vec(5, 0, 10);

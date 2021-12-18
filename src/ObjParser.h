@@ -5,13 +5,23 @@
 #ifndef RAYTRACER_OBJPARSER_H
 #define RAYTRACER_OBJPARSER_H
 
+#include <iostream>
+#include <string>
+#include "base.h"
+#include "Triangle.h"
+#include <vector>
+#include "Vec.h"
+
+using namespace std;
 
 class ObjParser {
 public:
-    explicit ObjParser(char *obj_file_name);
+    explicit ObjParser(const char *obj_file_name);
+
+    void parseObjects(vector<Primitive *> &objects, Material mat);
 
 private:
-    char *obj_file_name_{};
+    const char *obj_file_name_{};
 
 };
 
