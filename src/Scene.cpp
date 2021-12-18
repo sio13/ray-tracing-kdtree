@@ -128,6 +128,7 @@ void Scene::render(Image *image) {
     Vec plane_top_left_corner = plane_top_left_corner_coord - camera->origin_c;
 
     for (int w = 0; w < width; ++w) {
+        cout << w << endl;
         for (int h = 0; h < height; ++h) {
 
             Ray ray;

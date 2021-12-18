@@ -54,7 +54,6 @@ Intersection Triangle::intersect(Ray ray) {
         contact.normal_unit_v_ = normal.unit();
     }
 
-    cout << contact.normal_unit_v_.x() << " " << " " << contact.normal_unit_v_.y() << " " << contact.normal_unit_v_.z() << endl;
     return contact;
 }
 
