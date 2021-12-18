@@ -94,6 +94,12 @@
 		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/KDTree.h">
 			<Option target="raytracer"/>
 		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/ObjParser.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/ObjParser.h">
+			<Option target="raytracer"/>
+		</Unit>
 		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Plane.cpp">
 			<Option target="raytracer"/>
 		</Unit>
@@ -104,6 +110,12 @@
 			<Option target="raytracer"/>
 		</Unit>
 		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Scene.h">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Sphere.cpp">
+			<Option target="raytracer"/>
+		</Unit>
+		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Sphere.h">
 			<Option target="raytracer"/>
 		</Unit>
 		<Unit filename="/Users/martingano/repos/PGR_proj_2021/final_solution/ray_tracer/src/Triangle.cpp">

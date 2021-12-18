@@ -5,7 +5,6 @@
 #include "KDTree.h"
 
 #include <utility>
-#include <iostream>
 
 using namespace std;
 
@@ -23,25 +22,25 @@ KDTree *KDTree::construct_kdtree(vector<Primitive *> objects) {
  * instance of Intersection and concrete object returns as a parameter
  */
 bool KDTree::get_intersection(Ray ray, Primitive **object, Intersection *intersection) {
-    bool found = false;
-    float distance = -1;
-
+    bool is_intersect = false;
+    float closest_dist = std::numeric_limits<float>::max();
+    float EPS = 0.001;
     for (auto current_object : objects) {
-        Intersection current_intersection = current_object->intersect(ray);
-
-        if (current_intersection.exists) {
-            float current_distance = (current_intersection.contact_c_ - ray.origin_c_).length();
-            if (current_distance > 0.001 && (distance < 0 || current_distance < distance)) {
-                found = true;
-                distance = current_distance;
-                if (object){
+        Intersection actual_intersection = current_object->intersect(ray);
+        if (actual_intersection.exists) {
+            float ray_o_to_i_dist = (actual_intersection.contact_c_ - ray.origin_c_).length();
+            if (ray_o_to_i_dist > EPS && ray_o_to_i_dist < closest_dist) {
+                is_intersect = true;
+                closest_dist = ray_o_to_i_dist;
+                if (object) {
                     *object = current_object;
                 }
-                if (intersection)
-                    *intersection = current_intersection;
+                if (intersection) {
+                    *intersection = actual_intersection;
+                }
             }
         }
     }
 
-    return found;
+    return is_intersect;
 }

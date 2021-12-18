@@ -13,7 +13,7 @@ class Plane : public Primitive {
 public:
     Plane(Vec origin_c, Vec normal_unit_v);
 
-    Intersection intersect(Ray ray);
+    Intersection intersect(Ray ray) override;
     void setMaterial(Material mat);
 
 private:
