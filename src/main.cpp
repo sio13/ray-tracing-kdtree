@@ -13,6 +13,7 @@
 #include "Plane.h"
 #include "Triangle.h"
 #include "Box.h"
+#include "Sphere.h"
 
 using namespace std;
 
@@ -27,16 +28,16 @@ int main(int argc, char **argv) {
     mat.ambient_k_ = 0.01;
     mat.diffuse_k_ = 1.0;
     mat.occlusion_k = 0.02;
-    mat.reflection_k = 0;
+    mat.reflection_k = 0.3;
     mat.specular_k_ = 1.0;
     mat.shininess_ = 50;
     auto *plane = new Plane(Vec(0, 0, 0), Vec(0, 0, 1));
     (*plane).setMaterial(mat);
     objects.push_back(plane);
 
-//    auto *triangle = new Triangle(Vec(0.8, 14, 3), Vec(1.5, 13, 0), Vec(3, 14, 1.5));
-//    (*triangle).setMaterial(mat);
-//    objects.push_back(triangle);
+    auto *sphere = new Sphere(Vec(1.5, 8, 1), 1);
+    (*sphere).setMaterial(mat);
+    objects.push_back(sphere);
 
     auto *box = new Box(Vec(0, 10, 0), Vec(3, 13, 3));
     (*box).setMaterial(mat);
@@ -50,7 +51,7 @@ int main(int argc, char **argv) {
     float plane_width = 18;
 
     scene.camera = new Camera();
-    scene.camera->origin_c = Vec(8, 0, 8);
+    scene.camera->origin_c = Vec(-2, 0, 8);
     scene.camera->view_plane_point_c = Vec(0, 16, 0);
     scene.camera->view_plane_height = plane_height;
     scene.camera->view_plane_width = plane_width;
@@ -59,7 +60,7 @@ int main(int argc, char **argv) {
     scene.setSoftlightQ(6);
 
     scene.lights.push_back(new Light());
-    scene.lights[0]->origin_c_ = Vec(8, 0, 16);
+    scene.lights[0]->origin_c_ = Vec(5, 0, 10);
     scene.lights[0]->color_ = Color(1, 1, 1);
     scene.lights[0]->intensity_ = 7;
     scene.lights[0]->radius = 0.2;
@@ -85,6 +86,36 @@ int main(int argc, char **argv) {
         std::cout << key;
         if (key == 27) {
             return 0;
+        }
+        if (key == 3) {
+            scene.camera->origin_c = Vec(scene.camera->origin_c.x() + (float)0.5,
+                                              scene.camera->origin_c.y(),
+                                              scene.camera->origin_c.z());
+        }
+        if (key == 2) {
+            scene.camera->origin_c = Vec(scene.camera->origin_c.x() - (float)0.5,
+                                              scene.camera->origin_c.y(),
+                                              scene.camera->origin_c.z());
+        }
+        if (key == 0) {
+            scene.camera->origin_c = Vec(scene.camera->origin_c.x(),
+                                              scene.camera->origin_c.y(),
+                                              scene.camera->origin_c.z() + (float)0.5);
+        }
+        if (key == 1) {
+            scene.camera->origin_c = Vec(scene.camera->origin_c.x(),
+                                              scene.camera->origin_c.y(),
+                                              scene.camera->origin_c.z() - (float)0.5);
+        }
+        if (key == 115) {
+            scene.camera->origin_c = Vec(scene.camera->origin_c.x(),
+                                              scene.camera->origin_c.y() - (float)0.5,
+                                              scene.camera->origin_c.z());
+        }
+        if (key == 119) {
+            scene.camera->origin_c = Vec(scene.camera->origin_c.x(),
+                                              scene.camera->origin_c.y() + (float)0.5,
+                                              scene.camera->origin_c.z());
         }
 
     }

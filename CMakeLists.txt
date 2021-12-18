@@ -14,5 +14,7 @@ add_executable(raytracer src/main.cpp
         src/KDTree.cpp
         src/Scene.cpp
         src/Image.cpp
-        src/Box.cpp)
+        src/Box.cpp
+        src/Sphere.cpp
+        src/ObjParser.cpp)
 target_link_libraries(raytracer LINK_PUBLIC ${OpenCV_LIBS})

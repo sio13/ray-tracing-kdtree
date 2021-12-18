@@ -11,7 +11,7 @@ Box::Box(Vec min_bound, Vec max_bound) : min_bound_(min_bound), max_bound_(max_b
 }
 
 Vec Box::normalAt(Vec point, Vec min_bound, Vec max_bound) {
-    float EPS = 0.00001;
+    float EPS = 0.01;
     if (abs(point.y() - min_bound.y()) < EPS){
         return {0,-1,0};
     } else if(abs(point.x() - min_bound.x()) < EPS){
@@ -25,7 +25,6 @@ Vec Box::normalAt(Vec point, Vec min_bound, Vec max_bound) {
     } else if(abs(point.z() - max_bound.z()) < EPS){
         return {0,0,1};
     } else{
-        cout << "Error" << endl;
         return {0,0,0};
     }
 }
@@ -33,59 +32,51 @@ Vec Box::normalAt(Vec point, Vec min_bound, Vec max_bound) {
 Intersection Box::intersect(Ray ray) {
     Intersection result;
 
-    float tmin, tmax, tymin, tymax, tzmin, tzmax;
+    float t_min, t_max, ty_min, ty_max, tz_min, tz_max;
 
-    int sigmodivx[3];
-    float invdir_x = 1 / ray.direction_unit_v_.x();
-    float invdir_y = 1 / ray.direction_unit_v_.y();
-    float invdir_z = 1 / ray.direction_unit_v_.z();
-    sigmodivx[0] = (invdir_x < 0);
-    sigmodivx[1] = (invdir_y < 0);
-    sigmodivx[2] = (invdir_z < 0);
+    int sigmoid_div_x[3];
+    float inverse_direction_x = 1 / ray.direction_unit_v_.x();
+    float inverse_direction_y = 1 / ray.direction_unit_v_.y();
+    float inverse_direction_z = 1 / ray.direction_unit_v_.z();
+    sigmoid_div_x[0] = (inverse_direction_x < 0);
+    sigmoid_div_x[1] = (inverse_direction_y < 0);
+    sigmoid_div_x[2] = (inverse_direction_z < 0);
 
     Vec bounds[2];
     bounds[0] = min_bound_;
     bounds[1] = max_bound_;
 
-    tmin = (bounds[sigmodivx[0]].x() - ray.origin_c_.x()) * invdir_x;
-    tmax = (bounds[1-sigmodivx[0]].x() - ray.origin_c_.x()) * invdir_x;
-    tymin = (bounds[sigmodivx[1]].y() - ray.origin_c_.y()) * invdir_y;
-    tymax = (bounds[1-sigmodivx[1]].y() - ray.origin_c_.y()) * invdir_y;
+    t_min = (bounds[sigmoid_div_x[0]].x() - ray.origin_c_.x()) * inverse_direction_x;
+    t_max = (bounds[1-sigmoid_div_x[0]].x() - ray.origin_c_.x()) * inverse_direction_x;
+    ty_min = (bounds[sigmoid_div_x[1]].y() - ray.origin_c_.y()) * inverse_direction_y;
+    ty_max = (bounds[1-sigmoid_div_x[1]].y() - ray.origin_c_.y()) * inverse_direction_y;
 
     result.normal_unit_v_ = Vec(-1,0,0);
-    if ((tmin > tymax) || (tymin > tmax))
+    if ((t_min > ty_max) || (ty_min > t_max))
         return result;
-    if (tymin > tmin){
-        tmin = tymin;
+    if (ty_min > t_min){
+        t_min = ty_min;
         result.normal_unit_v_ = Vec(0,-1,0);
     }
+    if (ty_max < t_max)
+        t_max = ty_max;
 
-    if (tymax < tmax)
-        tmax = tymax;
+    tz_min = (bounds[sigmoid_div_x[2]].z() - ray.origin_c_.z()) * inverse_direction_z;
+    tz_max = (bounds[1-sigmoid_div_x[2]].z() - ray.origin_c_.z()) * inverse_direction_z;
 
-    tzmin = (bounds[sigmodivx[2]].z() - ray.origin_c_.z()) * invdir_z;
-    tzmax = (bounds[1-sigmodivx[2]].z() - ray.origin_c_.z()) * invdir_z;
-
-    if ((tmin > tzmax) || (tzmin > tmax))
+    if ((t_min > tz_max) || (tz_min > t_max))
         return result;
-    if (tzmin > tmin){
-        tmin = tzmin;
+    if (tz_min > t_min){
+        t_min = tz_min;
         result.normal_unit_v_ = Vec(0,0,-1);
     }
-
-    if (tzmax < tmax)
-        tmax = tzmax;
-
-    float t = tmin;
+    if (tz_max < t_max)
+        t_max = tz_max;
+    float t = t_min;
     Vec P = ray.origin_c_ + ray.direction_unit_v_ * t;
-
-
     result.exists = true;
     result.normal_unit_v_ = Box::normalAt(P, min_bound_, max_bound_);
-
-
     result.contact_c_ = P;
-
     return result;
 }
 

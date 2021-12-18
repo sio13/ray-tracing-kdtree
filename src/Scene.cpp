@@ -139,7 +139,6 @@ void Scene::render(Image *image) {
 
 
             Color pixel = traceRay(ray);
-            cout << pixel.r() << " " << pixel.g() << " " << pixel.b() << endl;
             pixel.gammaCorrect();
             image->set(w, h, static_cast<unsigned char>(pixel.r() * 255),
                        static_cast<unsigned char>(pixel.g() * 255),

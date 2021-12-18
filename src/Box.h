@@ -13,7 +13,7 @@
 class Box : public Primitive {
 public:
     Box(Vec min_bound, Vec max_bound);
-    Intersection intersect(Ray ray);
+    Intersection intersect(Ray ray) override;
     void setMaterial(Material mat);
 
 private:
