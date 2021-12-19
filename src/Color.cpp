@@ -40,11 +40,11 @@ Color Color::operator+=(const Color& other) {
 
 
 Color Color::operator*(const Color& other) const {
-    return Color(r_ * other.r_, g_ * other.g_, b_ * other.b_);
+    return {r_ * other.r_, g_ * other.g_, b_ * other.b_};
 }
 
 Color Color::operator*(float k) const {
-    return Color(r_ * k, g_ * k, b_ * k);
+    return {r_ * k, g_ * k, b_ * k};
 }
 
 Color Color::operator+(const Color& other) const {
@@ -52,5 +52,5 @@ Color Color::operator+(const Color& other) const {
 }
 
 Color Color::operator / (float k) const {
-    return Color(r_ / k, g_ / k, b_ / k);
+    return {r_ / k, g_ / k, b_ / k};
 }

@@ -14,9 +14,9 @@ public:
             : r_(r), g_(g), b_(b) {}
     Color() : r_(0), g_(0), b_(0) {}
 
-    float r() { return r_; }
-    float g() { return g_; }
-    float b() { return b_; }
+    float r() const { return r_; }
+    float g() const { return g_; }
+    float b() const { return b_; }
 
     void clip();
     void gammaCorrect();
@@ -28,7 +28,7 @@ public:
     Color operator/(float k) const;
 
 private:
-    float lu(float c);
+    static float lu(float c);
     float r_, g_, b_;
 };
 

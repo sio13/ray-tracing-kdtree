@@ -62,3 +62,54 @@ void Triangle::setMaterial(Material mat) {
     material_ = mat;
 }
 
+const Vec &Triangle::getP0() const {
+    return p0_;
+}
+
+const Vec &Triangle::getP1() const {
+    return p1_;
+}
+
+const Vec &Triangle::getP2() const {
+    return p2_;
+}
+
+float max(float n1, float n2) {
+    return n1 < n2 ? n2 : n1;
+}
+
+float getMax(int axis, Triangle &triangle) {
+    //0 ~ x
+    //1 ~ y
+    //2 ~ y
+    if (axis == 0) {
+        return max(triangle.getP0().x(), max(triangle.getP1().x(), triangle.getP2().x()));
+    } else if (axis == 1) {
+        return max(triangle.getP0().y(), max(triangle.getP1().y(), triangle.getP2().y()));
+    } else if (axis == 2) {
+        return max(triangle.getP0().z(), max(triangle.getP1().z(), triangle.getP2().z()));
+    }
+    cerr << "Wrong axis_!" << endl;
+    return 0.0;
+}
+
+float getMin(int axis, Triangle &triangle) {
+    //0 ~ x
+    //1 ~ y
+    //2 ~ y
+    if (axis == 0) {
+        return min(triangle.getP0().x(), min(triangle.getP1().x(), triangle.getP2().x()));
+    } else if (axis == 1) {
+        return min(triangle.getP0().y(), min(triangle.getP1().y(), triangle.getP2().y()));
+    } else if (axis == 2) {
+        return min(triangle.getP0().z(), min(triangle.getP1().z(), triangle.getP2().z()));
+    }
+    cerr << "Wring axis_!" << endl;
+    return 0.0;
+}
+
+void print(Triangle& triangle){
+    cout << triangle.getP0().x() << " " << triangle.getP0().y() << " " << triangle.getP0().z() << endl;
+    cout << triangle.getP1().x() << " " << triangle.getP1().y() << " " << triangle.getP1().z() << endl;
+    cout << triangle.getP2().x() << " " << triangle.getP2().y() << " " << triangle.getP2().z() << endl;
+}

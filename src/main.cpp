@@ -20,7 +20,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
     ObjParser obj_parser = ObjParser("data/ladybug_black.obj");
-    vector<Primitive *> objects;
+    vector<Triangle *> objects;
 
 
     Material mat;
@@ -37,21 +37,15 @@ int main(int argc, char **argv) {
     mat.shininess_ = 50;
     obj_parser.parseObjects(objects, mat);
 
-//    auto *plane = new Plane(Vec(0, 0, 0), Vec(0, 0, 1));
-//    (*plane).setMaterial(mat);
-//    objects.push_back(plane);
-
-//    auto *sphere = new Sphere(Vec(1.5, 8, 1), 1);
-//    (*sphere).setMaterial(mat);
-//    objects.push_back(sphere);
-
-//    auto *box = new Box(Vec(0, 10, 0), Vec(3, 13, 3));
-//    (*box).setMaterial(mat);
-//    objects.push_back(box);
 
     Scene scene;
-    KDTree *kdtree_root = KDTree::construct_kdtree(objects);
+    unsigned int max_objects = 10;
+    KDTree *kdtree_root = KDTree::construct_kdtree(objects, max_objects, 0);
     scene.kd_tree = kdtree_root;
+
+    cout << (*kdtree_root).getInnerSpaceBox().getMinBound().x() << endl;
+
+    return 0;
 
     float plane_height = 240;
     float plane_width = 300;

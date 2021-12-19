@@ -3,8 +3,8 @@
 // quality == suffix '_q'
 //
 
-#ifndef FINAL_SOLUTION_SCENE_H
-#define FINAL_SOLUTION_SCENE_H
+#ifndef RAY_TRACER_SOLUTION_SCENE_H
+#define RAY_TRACER_SOLUTION_SCENE_H
 
 #include "KDTree.h"
 #include "base.h"
@@ -44,4 +44,4 @@ private:
 };
 
 
-#endif //FINAL_SOLUTION_SCENE_H
+#endif //RAY_TRACER_SOLUTION_SCENE_H

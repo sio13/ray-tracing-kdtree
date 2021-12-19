@@ -12,7 +12,6 @@ Sphere::Sphere(Vec origin_c, float radius)
  * To find intersection of the vector and the sphere we have to resolve quadratic equation
  * The solution is adapted from
  * https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection
- *
  */
 Intersection Sphere::intersect(Ray ray) {
     Intersection contact;

@@ -13,7 +13,7 @@ ObjParser::ObjParser(const char *obj_file_name)
         : obj_file_name_(obj_file_name) {
 }
 
-void ObjParser::parseObjects(vector<Primitive *> &objects, Material mat) {
+void ObjParser::parseObjects(vector<Triangle *> &objects, Material mat) {
     ifstream obj(obj_file_name_, ios_base::in);
 
     char object_type[50];

@@ -2,8 +2,8 @@
 // Created by Martin Gano on 16.12.2021.
 //
 
-#ifndef FINAL_SOLUTION_PLANE_H
-#define FINAL_SOLUTION_PLANE_H
+#ifndef RAY_TRACER_PLANE_H
+#define RAY_TRACER_PLANE_H
 
 
 #include "base.h"
@@ -21,4 +21,4 @@ private:
     Vec normal_unit_v_;
 };
 
-#endif //FINAL_SOLUTION_PLANE_H
+#endif //RAY_TRACER_PLANE_H

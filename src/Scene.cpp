@@ -24,7 +24,7 @@ Color Scene::traceRay(Ray ray, int reflection_count) {
     if (reflection_count > max_reflections_count_)
         return result;
 
-    Primitive *object;
+    Triangle *object;
     Material material;
     Intersection intersection;
 
@@ -85,7 +85,7 @@ Color Scene::traceRay(Ray ray, int reflection_count) {
             if (random_dir.dot(intersection.normal_unit_v_) < 0)
                 random_dir = -random_dir;
             Ray occlusion_ray(intersection.contact_c_, random_dir);
-            Primitive *occlusion_object;
+            Triangle *occlusion_object;
             Intersection occlusion_intersection;
             if (kd_tree->get_intersection(occlusion_ray, &occlusion_object, &occlusion_intersection)) {
                 occlusion_amount -= occlusion_step;

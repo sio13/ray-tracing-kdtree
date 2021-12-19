@@ -1,6 +1,10 @@
-#include <cmath>
+//
+// Created by Martin Gano on 16.12.2021.
+//
+
+
 #include "Vec.h"
-#include <iostream>
+
 
 using namespace std;
 
@@ -56,4 +60,16 @@ Vec Vec::cross(const Vec &other) const {
     return {y_ * other.z_ - z_ * other.y_,
             z_ * other.x_ - x_ * other.z_,
             x_ * other.y_ - y_ * other.x_};
+}
+
+void Vec::setX(float x) {
+    x_ = x;
+}
+
+void Vec::setY(float y) {
+    y_ = y;
+}
+
+void Vec::setZ(float z) {
+    z_ = z;
 }

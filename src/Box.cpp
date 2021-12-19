@@ -84,3 +84,19 @@ Intersection Box::intersect(Ray ray) {
 void Box::setMaterial(Material mat) {
     material_ = mat;
 }
+
+const Vec &Box::getMinBound() const {
+    return min_bound_;
+}
+
+void Box::setMinBound(const Vec &minBound) {
+    min_bound_ = minBound;
+}
+
+const Vec &Box::getMaxBound() const {
+    return max_bound_;
+}
+
+void Box::setMaxBound(const Vec &maxBound) {
+    max_bound_ = maxBound;
+}

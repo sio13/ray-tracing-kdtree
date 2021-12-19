@@ -10,16 +10,25 @@
 #include "base.h"
 
 
-class Box : public Primitive {
+class Box {
 public:
     Box(Vec min_bound, Vec max_bound);
-    Intersection intersect(Ray ray) override;
+    Intersection intersect(Ray ray);
     void setMaterial(Material mat);
 
+    const Vec &getMinBound() const;
+
+    void setMinBound(const Vec &minBound);
+
+    const Vec &getMaxBound() const;
+
+    void setMaxBound(const Vec &maxBound);
+
 private:
-    Vec min_bound_{}, max_bound_{};
 
     static Vec normalAt(Vec point, Vec min_bound, Vec max_bound);
+    Vec min_bound_{}, max_bound_{};
+    Material material_;
 };
 
 

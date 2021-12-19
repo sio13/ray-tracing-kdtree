@@ -11,6 +11,9 @@
 
 #include "Vec.h"
 #include "Color.h"
+#include <vector>
+
+using namespace std;
 
 struct Material {
     float ambient_k_{}, diffuse_k_{}, occlusion_k{}, reflection_k{}, specular_k_{}, shininess_{};
