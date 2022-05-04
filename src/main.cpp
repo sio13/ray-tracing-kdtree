@@ -27,7 +27,7 @@ unsigned long long Triangle::total_intersections = 0;
 
 
 int main(int argc, char **argv) {
-    ObjParser obj_parser = ObjParser("data/output.obj");
+    ObjParser obj_parser = ObjParser("demo_data/bunny.obj");
     vector<Triangle *> objects;
 
     Material mat;

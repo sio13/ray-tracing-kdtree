@@ -14,7 +14,12 @@ file = open("data/input_obj_file")
 to your filename. The output will be in `output.obj`. Modify accordingly. To apply ray-tracer on your file 
 update this line in `main.cpp`:
 ```cpp
-ObjParser obj_parser = ObjParser("data/output.obj");
+ObjParser obj_parser = ObjParser("demo_data/bunny.obj");
+```
+
+Build and run the project:
+```
+cmake . && make && ./raytracer
 ```
 
 with your filename. 
