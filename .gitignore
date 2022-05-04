@@ -1,0 +1,10 @@
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+raytracer
+CMakeFiles/
+.cmake/
+.idea/
+data/
+Testing
+.DS_Store
